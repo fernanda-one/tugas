@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALKULATOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="infinite">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="content">
+        <div class="isi">
+            <h1>R E S U L T</h1>
+            <span id='hasil'>0</span><br>
+            <input type="text" placeholder="Masukan Angka" id="angka1">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">x</option>
+                </select>
+            <input type="text" placeholder="Masukan Angka" id="angka2">
+            <button id="submit">=</button>
+            <button id="reset">c</button>
+        </div>    
+    </div>
+
+    <script>
+        const angka1 = document.getElementById('angka1')
+        const angka2 = document.getElementById('angka2')
+        const operator = document.getElementById('operator')
+        const hasil = document.getElementById('hasil')
+        const submit = document.getElementById('submit')
+        const reset = document.getElementById('reset')
+        
+
+        submit.addEventListener('click',function(){
+            hasil.innerText = eval(angka1.value + operator.value + angka2.value )
+        })
+
+        reset.addEventListener('click',function(){
+            hasil.innerText=0;
+            angka1.value=' ';
+            angka2.value=' ';
+        })
+    </script>
+</body>
+</html>
